@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-login',
@@ -6,10 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  signupUsers:any[]=[];
-  signupObj:any={
-    email:'',
-    password:''
+
+  constructor(private auth: AuthService) {}
+
+  username = 'ledya'
+  password = '1994'
+
+
+  login() {
+    console.log(this.username)
+    this.auth.login(this.username, this.password).subscribe(res => {
+        console.log(res)
+    });
   }
 
 }

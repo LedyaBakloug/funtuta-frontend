@@ -1,0 +1,38 @@
+/* header{
+    padding: 50px 0;
+    background-color:aqua;
+   }
+  
+   .menu{
+    margin-top: 15;
+   }
+  
+   .menu ul{
+    padding: 0;
+    margin: 0;
+   }
+  
+   .menu ul li{
+    list-style-type: none;
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 50px;
+   }
+  
+   
+   .menu ul li:hover{
+    color: rgb(117, 129, 123);
+    cursor: pointer;
+    transition: .04 ease-in-out;
+   } */
+  
+   .logo{
+    height: 50px;
+     width: 50px;
+  
+   }
+
+
+   .spacer {
+    flex: 1 1 auto;
+  }

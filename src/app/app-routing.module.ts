@@ -7,12 +7,12 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
-  {path:'home', component:HomeComponent},
-  {path:'login', component:UserLoginComponent},
-  {path:'signup', component:UserSignupComponent},
-  {path:'admin', component:AdminComponent},
-  {path:'customer', component:CustomerComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: UserLoginComponent },
+  { path: 'signup', component: UserSignupComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'customer', component: CustomerComponent }
 ];
 
 @NgModule({
