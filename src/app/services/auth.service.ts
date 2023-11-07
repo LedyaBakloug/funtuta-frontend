@@ -18,4 +18,5 @@ export class AuthService {
 
     return this.http.get(`${API_URL}/login`, { headers, responseType: "text"});
   }
+  
 }

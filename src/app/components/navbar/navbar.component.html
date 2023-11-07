@@ -1,10 +1,16 @@
-  <mat-toolbar color="primary" class="mat-elevation-z4">  
+<nav *ngIf="router.url !== '/login'" class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#">Funtuta</a> -->
     <span><img class="logo" src="../../../assets/images/KL.png" alt="logo"></span>
-   <!-- <span><mat-icon>celebration</mat-icon></span> -->
-    <div class="spacer"></div>
-   <a mat-button routerLink="home">Home</a>
-   <a mat-button routerLink="">Services</a>
-   <a mat-button routerLink="login">login</a>
-   <a mat-button routerLink="">About Us</a>
-   <a mat-raised-button color="accent" routerLink="signup">Signup</a>
-  </mat-toolbar>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="../flights">Flights</a>
+            <a class="nav-item nav-link" routerLink="../hotels">Hotels</a>
+            <a class="nav-item nav-link" routerLink="../packages">Packages</a>
+            <a class="nav-item nav-link" routerLink="../thingstodo">Things to Do</a>
+        </div>
+    </div>
+</nav>
