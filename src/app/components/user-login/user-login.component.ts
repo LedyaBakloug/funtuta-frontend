@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-user-login',
@@ -11,17 +10,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class UserLoginComponent {
 
-  constructor(private auth: AuthService) {}
+  loginForm: FormGroup;
 
-  username = 'ledya'
-  password = '1994'
-
-  login() {
-    console.log(this.username)
-    this.auth.login(this.username, this.password).subscribe(res => {
-        console.log(res)
+  constructor(private fb: FormBuilder, private auth: AuthService) {
+    this.loginForm = this.fb.group({
+      username: ['ledya', Validators.required],
+      password: ['1994', Validators.required]
     });
-  
   }
 
+  login() {
+    this.auth.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(res => {
+      console.log(res)
+    });
+  }
 }

@@ -11,12 +11,7 @@ export class AuthService {
 
 
   login(username: String, password: String) {
-
-    let headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(`${username}:${password}`)
-    });
-
-    return this.http.get(`${API_URL}/login`, { headers, responseType: "text"});
-  }
+    return this.http.post(`${API_URL}/login`, {username, password});
+   }
   
 }

@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
@@ -49,7 +49,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatInputModule,
     MatCardModule,
@@ -59,6 +59,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatTableModule,
     MatSlideToggleModule,
     MatSelectModule,
+    MatButtonModule,
     MatOptionModule,
     BrowserAnimationsModule,
     MatFormFieldModule

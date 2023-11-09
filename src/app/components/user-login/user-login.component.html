@@ -1,24 +1,54 @@
-<!-- <mat-card>
+<mat-card class="container">
   <mat-card-content>
-    <form (ngSubmit)="login()" #loginForm="ngForm">
-      <mat-form-field appearance="fill" class="form-group">
-        <mat-label for="uname"><b>Username</b></mat-label>
-        <input type="text" class="form-control" placeholder="Enter Username" [(ngModel)]="username" name="uname"
-          required>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-container">
+      <mat-form-field>
+        <mat-label><b>Username</b></mat-label>
+        <input matInput type="text" placeholder="Enter Username" formControlName="username">
+        <mat-error
+          *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty)">Please
+          enter a valid username</mat-error>
       </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label for="psw"><b>Password</b></mat-label>
-        <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password" name="psw"
-          required>
+      <mat-form-field>
+        <mat-label><b>Password</b></mat-label>
+        <input matInput type="password" placeholder="Enter Password" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty)">Please enter a valid password</mat-error>
       </mat-form-field>
+      <button mat-raised-button type="submit" color="primary" [disabled]="loginForm.invalid" [routerLink]="">Login</button>
     </form>
   </mat-card-content>
 </mat-card>
 
-<button type="submit">Login</button> -->
 
-<div fxLayout="row" fxLayoutAlign="" class="login-main">
+
+
+
+
+
+
+
+
+
+<!-- <mat-card class="container">
+  <mat-card-content class="example-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(myForm)">
+        <mat-form-field>
+        <mat-label><b>Username</b></mat-label>
+        <input matInput type="text" placeholder="Enter Username" [formControl]="username" required>
+        <mat-error *ngIf="loginForm.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label><b>Password</b></mat-label>
+        <input matInput type="password" placeholder="Enter Password" [formControl]="password" required> 
+        <mat-error *ngIf="password.invalid">{{getErrorMessage2()}}</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Login</button>
+    </form>
+
+  </mat-card-content>
+</mat-card> -->
+
+
+<!-- <div fxLayout="row" fxLayoutAlign="" class="login-main">
   <mat-card >
   <mat-card-header>
     <mat-card-title>Login Page</mat-card-title>
@@ -38,6 +68,4 @@
   </mat-card>
 
     <a routerLink="../forgotpassword">Forgot Password</a>
-
-
-  </div>
+  </div> -->
