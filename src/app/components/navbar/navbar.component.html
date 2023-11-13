@@ -1,16 +1,18 @@
-<nav *ngIf="router.url !== '/login'" class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- <a class="navbar-brand" href="#">Funtuta</a> -->
-    <span><img class="logo" src="../../../assets/images/KL.png" alt="logo"></span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" routerLink="../flights">Flights</a>
-            <a class="nav-item nav-link" routerLink="../hotels">Hotels</a>
-            <a class="nav-item nav-link" routerLink="../packages">Packages</a>
-            <a class="nav-item nav-link" routerLink="../thingstodo">Things to Do</a>
-        </div>
-    </div>
-</nav>
+<mat-toolbar *ngIf="router.url !== '/login'"> 
+    <!-- <span><img class="logo" src="../../../assets/images/KL.png" alt=""></span> -->
+
+ <button mat-raised-button color="accent"  [matMenuTriggerFor]="menu">Funtuta</button>
+    <mat-menu #menu="matMenu">
+      <button mat-raised-button color="accent" routerLink="../packages">About</button>
+      <button mat-raised-button color="accent" routerLink="../packages">Contact Us</button>
+    </mat-menu>
+   
+    <span class="spacer"></span>
+
+    <button mat-raised-button color="primary" routerLink="../home">Home</button>
+    <button mat-raised-button color="accent" routerLink="../hotels">Hotels</button>
+    <button mat-raised-button color="accent" routerLink="../flights">Flights</button>
+    <button mat-raised-button color="accent" routerLink="../packages">Packages</button>
+    <button mat-raised-button color="accent" routerLink="../thingstodo">Things to Do</button>
+
+</mat-toolbar> 

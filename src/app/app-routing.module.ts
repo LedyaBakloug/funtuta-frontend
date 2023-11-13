@@ -10,19 +10,24 @@ import { FlightsComponent } from './components/flights/flights.component';
 import { HotelsComponent } from './components/hotels/hotels.component';
 import { ThingsToDoComponent } from './components/things-to-do/things-to-do.component';
 import { PackagesComponent } from './components/packages/packages.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CruisesComponent } from './components/cruises/cruises.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'signup', component: UserSignupComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'customer', component: CustomerComponent },
-  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]  },
+  { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
+  { path: 'forgotpassword', component: ForgotPasswordComponent, canActivate: [AuthGuard]  },
   { path: 'flights', component: FlightsComponent},
   { path: 'hotels', component: HotelsComponent },
   { path: 'packages', component: PackagesComponent },
-  { path: 'thingstodo', component: ThingsToDoComponent }
+  { path: 'thingstodo', component: ThingsToDoComponent },
+  { path: 'cruises', component: CruisesComponent},
+  { path: "**", component: PageNotFoundComponent}
 ];
 
 @NgModule({

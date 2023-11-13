@@ -12,8 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,6 +26,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
+import { CruisesComponent } from './components/cruises/cruises.component';
+
+
 
 
 
@@ -41,7 +45,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AdminComponent,
     CustomerComponent,
     NavbarComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    CruisesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatToolbarModule,
     MatInputModule,
     MatCardModule,
     MatMenuModule,
@@ -62,7 +66,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatButtonModule,
     MatOptionModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
