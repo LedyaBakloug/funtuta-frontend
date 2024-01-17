@@ -29,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { CruisesComponent } from './components/cruises/cruises.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 
@@ -68,7 +69,8 @@ import { CruisesComponent } from './components/cruises/cruises.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

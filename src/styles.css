@@ -1,25 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
- /* html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }  */
-
 body{
-   
-    background-image:url('./assets/images/photo.jpg');
-
- 
+  /* background-image:url('./assets/images/photo.jpg');  */
 }
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
-  #background-img{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
